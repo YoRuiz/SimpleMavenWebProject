@@ -1,0 +1,13 @@
+CREATE TABLE COMPONENTE
+(
+  Id_componente INT PRIMARY KEY NOT NULL COMMENT 'Id del artista.' AUTO_INCREMENT,
+  Nombre_componente CHAR(255) NOT NULL COMMENT 'Nombre del artista.',
+  Apellidos CHAR(255) NOT NULL COMMENT 'Apellidos del componente.',
+  Apodo CHAR(255) COMMENT 'Apodo del artista, en el caso de que lo tuviera.',
+  `Fecha de nacimiento` DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT 'Fecha de nacimiento del artista.',
+  `Fecha de fallecimiento` DATETIME COMMENT 'Fecha de fallecimiento (en el caso de que hubiera fallecido).',
+  Last_update DATETIME NOT NULL COMMENT 'Última actualización.'
+);
+CREATE UNIQUE INDEX COMPONENTE_Id_componente_uindex ON COMPONENTES (Id_componente);
+ALTER TABLE COMPONENTES COMMENT = 'Esta tabla contiene información sobre
+los artistas relacionados con el Carnaval Gaditano.';
